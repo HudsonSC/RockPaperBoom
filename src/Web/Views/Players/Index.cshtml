@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Players";
+}
+@model IEnumerable<PlayerViewModel>
+
+<h2>Players</h2>
+<p>All registered players</p>
+<a asp-controller="Players" asp-action="Add">Add Player</a>
+
+<table class="table-bordered">
+    <thead>
+    <tr>
+        <th>Player Name</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var player in Model)
+    {
+        <tr><td>@player.Name</td><td>OK</td></tr>
+    }
+    </tbody>
+</table>
